@@ -29,6 +29,7 @@ jobs:
         steps:
             - name: "Checkout code"
               uses: actions/checkout@v5
+            - run: sudo apt install symfony-cli
             - run: symfony new --demo my_project
 
             - name: "Install PHP with extensions"
