@@ -30,7 +30,7 @@ jobs:
             - name: "Checkout code"
               uses: actions/checkout@v5
             - run: curl -sS https://get.symfony.com/cli/installer | bash
-            - run: symfony new --demo my_project
+           
 
             - name: "Install PHP with extensions"
               uses: shivammathur/setup-php@v2
@@ -51,6 +51,8 @@ jobs:
                 php bin/console importmap:install
                 php bin/console sass:build
                 php bin/console asset-map:compile
+                
+            - run: symfony new --demo my_project
 
             - name: "Run tests"
               run: vendor/bin/phpunit
